@@ -10,8 +10,7 @@ export const INITIAL_TABLES = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
   name: `Table ${i + 1}`,
   capacity: i % 2 === 0 ? 4 : 2,
-  status: i === 1 ? 'occupied' : i === 3 ? 'waiter_called' : i === 6 ? 'bill_requested' : 'available',
-  qrCodeUrl: `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(`http://localhost:5173/?table=${i + 1}`)}`
+  status: i === 1 ? 'occupied' : i === 3 ? 'waiter_called' : i === 6 ? 'bill_requested' : 'available'
 }));
 
 export const INITIAL_DISHES = [

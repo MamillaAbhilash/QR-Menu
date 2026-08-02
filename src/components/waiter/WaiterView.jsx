@@ -3,7 +3,6 @@ import KDSBoard from './KDSBoard';
 import FloorMapGrid from './FloorMapGrid';
 import ServiceAlerts from './ServiceAlerts';
 import POSOrderModal from './POSOrderModal';
-import RoleQRScanner from '../common/RoleQRScanner';
 import { LayoutGrid, Map, Plus } from 'lucide-react';
 
 export default function WaiterView() {
@@ -12,13 +11,6 @@ export default function WaiterView() {
 
   return (
     <div className="page-content">
-      <RoleQRScanner
-        roleLabel="Waiter"
-        targetView="waiter"
-        helperText="Scan a table QR to open the waiter panel for that table instantly."
-        accentColor="var(--accent-indigo)"
-      />
-
       {/* Service Alert Queue */}
       <ServiceAlerts />
 

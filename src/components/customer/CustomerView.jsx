@@ -5,7 +5,6 @@ import ItemDetailModal from './ItemDetailModal';
 import CartDrawer from './CartDrawer';
 import OrderTracker from './OrderTracker';
 import ServiceButtons from './ServiceButtons';
-import RoleQRScanner from '../common/RoleQRScanner';
 import { Search, ShoppingBag, Plus, Sparkles, Flame, Clock, Leaf } from 'lucide-react';
 
 export default function CustomerView() {
@@ -108,16 +107,9 @@ export default function CustomerView() {
         </div>
 
         <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-          Scan QR Code URL simulated: <code style={{ color: 'var(--primary)', background: 'rgba(0,0,0,0.4)', padding: '2px 6px', borderRadius: '4px' }}>?table={activeTable}</code>
+          Active URL param: <code style={{ color: 'var(--primary)', background: 'rgba(0,0,0,0.4)', padding: '2px 6px', borderRadius: '4px' }}>?table={activeTable}</code>
         </div>
       </div>
-
-      <RoleQRScanner
-        roleLabel="Customer"
-        targetView="customer"
-        helperText="Scan a table QR to jump straight into the ordering experience for that table."
-        accentColor="var(--primary)"
-      />
 
       {/* Hero Header */}
       <section className="customer-hero">
