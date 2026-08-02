@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRestaurant } from '../../context/RestaurantContext';
+import { CATEGORIES } from '../../data/seedData';
 import Modal from '../common/Modal';
 import { Plus, Edit2, Trash2, Leaf, Sparkles, Check, ToggleLeft, ToggleRight } from 'lucide-react';
 
@@ -11,7 +12,7 @@ export default function MenuManagement() {
   // Form State
   const [formData, setFormData] = useState({
     name: '',
-    category: 'starters',
+    category: 'soups',
     price: '',
     description: '',
     imageUrl: '',
@@ -24,7 +25,7 @@ export default function MenuManagement() {
     setEditingDish(null);
     setFormData({
       name: '',
-      category: 'starters',
+      category: 'soups',
       price: '',
       description: '',
       imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80',
@@ -118,7 +119,9 @@ export default function MenuManagement() {
               </div>
 
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', margin: '0.2rem 0 0.5rem 0' }}>
-                Category: <strong style={{ color: 'var(--text-main)' }}>{dish.category}</strong>
+                Category: <strong style={{ color: 'var(--text-main)' }}>
+                  {CATEGORIES.find((c) => c.id === dish.category)?.name || dish.category}
+                </strong>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' }}>
@@ -191,10 +194,11 @@ export default function MenuManagement() {
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               >
-                <option value="starters">Starters & Small Bites</option>
-                <option value="mains">Signature Mains</option>
-                <option value="desserts">Artisanal Desserts</option>
-                <option value="beverages">Craft Beverages</option>
+                {CATEGORIES.filter((c) => c.id !== 'all').map((cat) => (
+                  <option key={cat.id} value={cat.id}>
+                    {cat.name}
+                  </option>
+                ))}
               </select>
             </div>
 
