@@ -200,7 +200,7 @@ export default function CustomerView() {
             <div className="dish-content">
               <div className="dish-header">
                 <h3 className="dish-title">{dish.name}</h3>
-                <span className="dish-price">${dish.price.toFixed(2)}</span>
+                <span className="dish-price">₹{dish.price.toFixed(2)}</span>
               </div>
 
               <p className="dish-desc">{dish.description}</p>
@@ -232,7 +232,7 @@ export default function CustomerView() {
             <div className="cart-badge-count">{totalCartCount}</div>
             <div className="cart-total-text">
               <span className="label">Table {activeTable} Order Staged</span>
-              <span className="amount">${totalCartAmount.toFixed(2)}</span>
+              <span className="amount">₹{totalCartAmount.toFixed(2)}</span>
             </div>
           </div>
 

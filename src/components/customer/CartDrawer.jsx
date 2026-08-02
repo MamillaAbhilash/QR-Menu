@@ -60,7 +60,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                     </div>
                   )}
                   <div style={{ fontWeight: 800, color: 'var(--primary)', marginTop: '0.2rem' }}>
-                    ${item.totalPrice.toFixed(2)}
+                    ₹{item.totalPrice.toFixed(2)}
                   </div>
                 </div>
 
@@ -109,15 +109,15 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
           <div style={{ background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '10px', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>₹{subtotal.toFixed(2)}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               <span>Estimated Tax (8%)</span>
-              <span>${tax.toFixed(2)}</span>
+              <span>₹{tax.toFixed(2)}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-main)', borderTop: '1px dashed var(--border-color)', pt: '0.5rem', marginTop: '0.2rem' }}>
               <span>Grand Total</span>
-              <span style={{ color: 'var(--primary)' }}>${grandTotal.toFixed(2)}</span>
+              <span style={{ color: 'var(--primary)' }}>₹{grandTotal.toFixed(2)}</span>
             </div>
           </div>
 

@@ -58,7 +58,7 @@ export default function KDSBoard() {
                             <span style={{ fontWeight: 700 }}>
                               {item.quantity}x {item.name}
                             </span>
-                            <span>${(item.unitPrice * item.quantity).toFixed(2)}</span>
+                            <span>₹{(item.unitPrice * item.quantity).toFixed(2)}</span>
                           </div>
                           {item.selectedVariation && (
                             <div className="order-item-addons">• {item.selectedVariation}</div>
@@ -83,7 +83,7 @@ export default function KDSBoard() {
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px dashed var(--border-color)' }}>
                       <span style={{ fontWeight: 800, fontSize: '0.95rem' }}>
-                        Total: ${order.totalAmount.toFixed(2)}
+                        Total: ₹{order.totalAmount.toFixed(2)}
                       </span>
 
                       {col.nextStatus && (

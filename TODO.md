@@ -10,4 +10,4 @@
 - [x] Update `src/components/admin/MenuManagement.jsx` category dropdown to match new categories
 - [x] Verify CustomerView.jsx picks up new categories automatically
 - [x] Verify no old category references remain
-- [ ] Commit changes and push to GitHub (QR-Menu repo)
+- [x] Commit changes and push to GitHub (QR-Menu repo)

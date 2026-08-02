@@ -65,7 +65,7 @@ export default function FloorMapGrid() {
                     <CreditCard size={12} /> Bill Requested
                   </span>
                 ) : table.status === 'occupied' ? (
-                  <span style={{ color: '#818cf8' }}>Occupied (${totalBill.toFixed(2)})</span>
+                  <span style={{ color: '#818cf8' }}>Occupied (₹{totalBill.toFixed(2)})</span>
                 ) : (
                   <span style={{ color: 'var(--accent-emerald)' }}>Available</span>
                 )}
@@ -97,7 +97,7 @@ export default function FloorMapGrid() {
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Current Bill:</span>
                     <span style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--accent-emerald)', marginLeft: '0.4rem' }}>
-                      ${totalBill.toFixed(2)}
+                      ₹{totalBill.toFixed(2)}
                     </span>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function FloorMapGrid() {
                         <div key={ord.id} style={{ background: 'rgba(255,255,255,0.03)', padding: '0.65rem', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700 }}>
                             <span>{ord.id}</span>
-                            <span style={{ color: 'var(--primary)' }}>${ord.totalAmount.toFixed(2)}</span>
+                            <span style={{ color: 'var(--primary)' }}>₹{ord.totalAmount.toFixed(2)}</span>
                           </div>
                           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
                             {ord.items.map((i) => `${i.quantity}x ${i.name}`).join(', ')}

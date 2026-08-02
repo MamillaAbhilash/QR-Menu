@@ -41,7 +41,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose, onAddToCart }) 
       unitPrice,
       totalPrice,
       selectedVariation: selectedVariation ? selectedVariation.name : null,
-      addOns: selectedAddOns.map((a) => `${a.name} (+$${a.price.toFixed(2)})`),
+      addOns: selectedAddOns.map((a) => `${a.name} (+₹${a.price.toFixed(2)})`),
       specialInstructions: specialInstructions.trim()
     };
     onAddToCart(cartItem);
@@ -63,7 +63,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose, onAddToCart }) 
               {dish.description}
             </p>
             <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)', marginTop: '0.4rem' }}>
-              ${dish.price.toFixed(2)}
+              ₹{dish.price.toFixed(2)}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose, onAddToCart }) 
                 >
                   <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{v.name}</span>
                   <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    {v.priceDelta > 0 ? `+$${v.priceDelta.toFixed(2)}` : v.priceDelta < 0 ? `-$${Math.abs(v.priceDelta).toFixed(2)}` : 'Standard'}
+                    {v.priceDelta > 0 ? `+₹${v.priceDelta.toFixed(2)}` : v.priceDelta < 0 ? `-₹${Math.abs(v.priceDelta).toFixed(2)}` : 'Standard'}
                   </span>
                 </div>
               ))}
@@ -145,7 +145,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose, onAddToCart }) 
                       <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{a.name}</span>
                     </div>
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                      +${a.price.toFixed(2)}
+                      +₹{a.price.toFixed(2)}
                     </span>
                   </div>
                 );
@@ -187,7 +187,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose, onAddToCart }) 
           </div>
 
           <button className="btn-primary" onClick={handleConfirm} style={{ padding: '0.75rem 1.5rem' }}>
-            Add to Order (${totalPrice.toFixed(2)})
+            Add to Order (₹{totalPrice.toFixed(2)})
           </button>
         </div>
       </div>

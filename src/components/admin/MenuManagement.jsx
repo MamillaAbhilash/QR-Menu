@@ -114,7 +114,7 @@ export default function MenuManagement() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <h4 style={{ fontWeight: 700, fontSize: '0.95rem' }}>{dish.name}</h4>
                 <span style={{ fontWeight: 800, color: 'var(--primary)', fontSize: '1rem' }}>
-                  ${dish.price.toFixed(2)}
+                  ₹{dish.price.toFixed(2)}
                 </span>
               </div>
 
@@ -203,7 +203,7 @@ export default function MenuManagement() {
             </div>
 
             <div className="form-group">
-              <label>PRICE ($)</label>
+              <label>PRICE (₹)</label>
               <input
                 type="number"
                 step="0.5"

@@ -47,7 +47,7 @@ export default function AnalyticsDashboard() {
             <DollarSign size={24} />
           </div>
           <div className="stat-info">
-            <div className="value">${totalRevenue.toFixed(2)}</div>
+            <div className="value">₹{totalRevenue.toFixed(2)}</div>
             <div className="label">Total System Revenue</div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function AnalyticsDashboard() {
             <TrendingUp size={24} />
           </div>
           <div className="stat-info">
-            <div className="value">${avgOrderValue.toFixed(2)}</div>
+            <div className="value">₹{avgOrderValue.toFixed(2)}</div>
             <div className="label">Average Order Value</div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function AnalyticsDashboard() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
         {/* Hourly Revenue Bar Chart */}
         <div className="chart-card">
-          <div className="chart-header">Hourly Sales Trends ($)</div>
+          <div className="chart-header">Hourly Sales Trends (₹)</div>
           
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', height: '180px', gap: '0.75rem', paddingTop: '1rem' }}>
             {hourlyData.map((d, i) => {
@@ -95,7 +95,7 @@ export default function AnalyticsDashboard() {
               return (
                 <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
                   <span style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 700, marginBottom: '4px' }}>
-                    ${d.amount}
+                    ₹{d.amount}
                   </span>
                   <div style={{ width: '100%', flex: 1, display: 'flex', alignItems: 'flex-end', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', padding: '2px' }}>
                     <div

@@ -97,7 +97,7 @@ export default function POSOrderModal({ isOpen, onClose }) {
                 }}
               >
                 <span style={{ fontWeight: 600 }}>{dish.name}</span>
-                <span style={{ color: 'var(--primary)', fontWeight: 800 }}>${dish.price.toFixed(2)}</span>
+                <span style={{ color: 'var(--primary)', fontWeight: 800 }}>₹{dish.price.toFixed(2)}</span>
               </button>
             ))}
           </div>
@@ -116,7 +116,7 @@ export default function POSOrderModal({ isOpen, onClose }) {
                 <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.3)', padding: '0.4rem 0.6rem', borderRadius: '6px', fontSize: '0.85rem' }}>
                   <span>{item.quantity}x {item.name}</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{ fontWeight: 800, color: 'var(--primary)' }}>${item.totalPrice.toFixed(2)}</span>
+                    <span style={{ fontWeight: 800, color: 'var(--primary)' }}>₹{item.totalPrice.toFixed(2)}</span>
                     <button onClick={() => handleRemoveItem(item.id)} style={{ background: 'none', border: 'none', color: 'var(--accent-crimson)', cursor: 'pointer' }}>
                       <Trash2 size={14} />
                     </button>
@@ -130,7 +130,7 @@ export default function POSOrderModal({ isOpen, onClose }) {
         {posCart.length > 0 && (
           <div style={{ background: 'rgba(245, 158, 11, 0.1)', padding: '0.75rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', fontWeight: 800 }}>
             <span>Estimated Total (Inc. Tax):</span>
-            <span style={{ color: 'var(--primary)' }}>${grandTotal.toFixed(2)}</span>
+            <span style={{ color: 'var(--primary)' }}>₹{grandTotal.toFixed(2)}</span>
           </div>
         )}
 
